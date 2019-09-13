@@ -1,0 +1,49 @@
+{
+  "name": "recolor-img",
+  "version": "0.0.0",
+  "description": "Recolor an image (useful for coloring toolbar buttons)",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "author": "Mgen (https://www.mgenware.com)",
+  "homepage": "https://github.com/mgenware/recolor-img",
+  "bugs": "https://github.com/mgenware/recolor-img/issues",
+  "keywords": [
+    "imaging",
+    "color"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgenware/recolor-img.git"
+  },
+  "scripts": {
+    "build": "yarn run lint && yarn run clean && cross-env NODE_ENV=production rollup -c && node ./postbuild/postbuild",
+    "compile": "tsc",
+    "dev": "yarn run clean && cross-env NODE_ENV=development rollup -c -w",
+    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "clean": "del-cli dist",
+    "test": "yarn build"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@types/imagesloaded": "^4.1.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.5",
+    "cross-env": "^5.2.1",
+    "del-cli": "^3.0.0",
+    "mocha": "^6.2.0",
+    "rollup": "^1.21.2",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript2": "^0.24.2",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3",
+    "unique-temp-dir": "^1.0.0"
+  },
+  "dependencies": {
+    "hex-rgb": "^4.1.0",
+    "imagesloaded": "^4.1.4"
+  }
+}
