@@ -3,14 +3,12 @@ import hex2rgb from 'hex-rgb';
 
 function setColors(data: Uint8ClampedArray, rgba: number[]) {
   for (let i = 0; i < data.length; i += 4) {
-    console.log(`A ${data[i]}-${data[i + 1]}-${data[i + 2]}-${data[i + 3]}-`);
     if (data[i] || data[i + 1] || data[i + 2] || data[i + 3]) {
       data[i] = rgba[0];
       data[i + 1] = rgba[1];
       data[i + 2] = rgba[2];
       data[i + 3] = rgba[3];
     }
-    console.log(`B ${data[i]}-${data[i + 1]}-${data[i + 2]}-${data[i + 3]}-`);
   }
 }
 
