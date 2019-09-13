@@ -1,7 +1,7 @@
 {
   "name": "recolor-img",
   "version": "0.0.1",
-  "description": "Recolor an image (useful for coloring toolbar buttons)",
+  "description": "Recolor an image (useful for coloring toolbar icon)",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "author": "Mgen (https://www.mgenware.com)",
