@@ -9,7 +9,8 @@
   "bugs": "https://github.com/mgenware/recolor-img/issues",
   "keywords": [
     "imaging",
-    "color"
+    "color",
+    "image processing"
   ],
   "repository": {
     "type": "git",
