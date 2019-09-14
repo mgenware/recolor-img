@@ -1,6 +1,6 @@
 # recolor-img
 
-Recolor an image (useful for coloring toolbar icon)
+Recolor an image (SVG and PNG), useful for recoloring toolbar icons.
 
 ## Installation
 
