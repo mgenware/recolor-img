@@ -17,7 +17,8 @@
     "url": "https://github.com/mgenware/recolor-img.git"
   },
   "scripts": {
-    "build": "yarn run lint && yarn run clean && cross-env NODE_ENV=production rollup -c",
+    "t": "mocha tests/**/*.test.js",
+    "build": "yarn run lint && yarn run clean && cross-env NODE_ENV=production rollup -c && yarn run t",
     "compile": "tsc",
     "dev": "yarn run clean && cross-env NODE_ENV=development rollup -c -w",
     "lint": "tslint --project tsconfig.json --config tslint.json",
