@@ -1,6 +1,6 @@
 {
   "name": "recolor-img",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Recolor an image (SVG and PNG), useful for recoloring toolbar icons",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
