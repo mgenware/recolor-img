@@ -1,5 +1,6 @@
 import imgLoaded from 'imagesloaded';
 import hex2rgb from 'hex-rgb';
+import svgToMiniDataURI from 'mini-svg-data-uri';
 
 function setColors(data: Uint8ClampedArray, rgba: number[]) {
   for (let i = 0; i < data.length; i += 4) {
@@ -12,7 +13,7 @@ function setColors(data: Uint8ClampedArray, rgba: number[]) {
   }
 }
 
-export function recolorPNG(img: HTMLImageElement, colorHex: string) {
+export function recolorPNGImage(img: HTMLImageElement, colorHex: string) {
   if (!img || !colorHex) {
     return;
   }
@@ -38,4 +39,35 @@ export function recolorPNG(img: HTMLImageElement, colorHex: string) {
     context.putImageData(imgData, 0, 0);
     img.src = canvas.toDataURL('image/png');
   });
+}
+
+export function recolorSVGString(
+  svgSource: string,
+  colorHex: string,
+  toDataURI: boolean,
+): string {
+  if (!svgSource || !colorHex) {
+    return '';
+  }
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(svgSource, 'image/svg+xml');
+
+  const elements = doc.documentElement.getElementsByTagName('*');
+  for (const element of [...elements]) {
+    // fill defaults to black
+    const fillValue = element.getAttribute('fill');
+    if (fillValue !== 'none') {
+      element.setAttribute('fill', colorHex);
+    }
+    // stroke defaults to none
+    const strokeValue = element.getAttribute('stroke');
+    if (strokeValue && strokeValue !== 'none') {
+      element.setAttribute('fill', colorHex);
+    }
+  }
+  if (!toDataURI) {
+    return doc.documentElement.outerHTML;
+  }
+
+  return svgToMiniDataURI(doc.documentElement.outerHTML);
 }

@@ -3,7 +3,7 @@
   "extends": ["tslint:recommended"],
   "jsRules": {},
   "rules": {
-    "quotemark": [true, "single"],
+    "quotemark": [false],
     "member-access": [false],
     "no-var-requires": false,
     "ordered-imports": false,
@@ -12,7 +12,8 @@
     "strict-type-predicates": true,
     "arrow-parens": [true, "ban-single-arg-parens"],
     "interface-name": false,
-    "max-line-length": false
+    "max-line-length": false,
+    "no-any": false
   },
   "rulesDirectory": []
 }
