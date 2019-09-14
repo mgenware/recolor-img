@@ -1,6 +1,6 @@
 {
   "name": "recolor-img",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Recolor an image (useful for coloring toolbar icon)",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
